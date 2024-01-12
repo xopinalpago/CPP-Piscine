@@ -6,7 +6,7 @@
 /*   By: rmeriau <rmeriau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 17:19:25 by rmeriau           #+#    #+#             */
-/*   Updated: 2024/01/10 11:13:51 by rmeriau          ###   ########.fr       */
+/*   Updated: 2024/01/12 12:24:13 by rmeriau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,13 @@ void ft_test(T elem)
     std::cout << elem << std::endl;
 }
 
-template < typename T>
-void iter(T *tab, size_t len, void (*ptr_f)(T& elem))
+template<class T>
+void    iter(T *tab, int len, void(*f)(T const &elem))
 {
-    for (size_t i = 0; i < len; i++)
+    for(int i = 0; i < len; i++)
     {
-        ptr_f(tab[i]);
+        T &elem = tab[i];
+        f(elem);
     }
 }
 
