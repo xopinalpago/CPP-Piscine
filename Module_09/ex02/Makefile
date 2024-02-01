@@ -5,17 +5,17 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rmeriau <rmeriau@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/11/06 12:37:24 by rmeriau           #+#    #+#              #
-#    Updated: 2024/01/31 11:09:54 by rmeriau          ###   ########.fr        #
+#    Created: 2023/07/10 16:29:29 by dlu               #+#    #+#              #
+#    Updated: 2024/01/30 11:21:48 by rmeriau          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD
 RM = rm -rf
-NAME = RPN
+NAME = PmergeMe
 
-SRCS = main.cpp RPN.cpp
+SRCS = main.cpp PmergeMe.cpp
 OBJS = $(SRCS:.cpp=.o)
 DEPS = $(SRCS:.cpp=.d)
 INCLUDE = -I.

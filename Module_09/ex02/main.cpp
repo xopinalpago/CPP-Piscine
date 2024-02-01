@@ -5,19 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmeriau <rmeriau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/15 11:13:08 by rmeriau           #+#    #+#             */
-/*   Updated: 2024/01/30 16:29:56 by rmeriau          ###   ########.fr       */
+/*   Created: 2023/08/08 15:06:44 by dlu               #+#    #+#             */
+/*   Updated: 2024/01/31 15:11:55 by rmeriau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "RPN.hpp"
+#include "PmergeMe.hpp"
 
-int main(int argc, char **argv)
-{
-	RPN rpn;
-	
-	if (argc != 2)
-		return (std::cout << "Error" << std::endl, 1);
-	rpn.do_operation(argv[1]);
-	return (0);
+int main(int ac, char **av) {
+    if (ac < 2) {
+        std::cout << "Error" << std::endl;
+        return 1;
+    }
+
+    try {
+        PmergeMe pMergeMe;
+        pMergeMe.printResult(ac - 1, &av[1]);
+    } catch (std::exception &e) {
+        std::cerr << e.what() << std::endl;
+    }
+    return 0;
 }

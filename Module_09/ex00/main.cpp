@@ -6,7 +6,7 @@
 /*   By: rmeriau <rmeriau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 11:13:08 by rmeriau           #+#    #+#             */
-/*   Updated: 2024/01/16 14:24:34 by rmeriau          ###   ########.fr       */
+/*   Updated: 2024/01/30 15:25:38 by rmeriau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ int main(int argc, char **argv)
 	else if (argc == 1)
 		return (std::cout << "Error: could not open file." << std::endl, 1);
 	std::string file = argv[1];
-	be.read_data();
-	be.read_file(file);
+	if (be.read_data() == 0)
+		return (1);
+	if (be.read_file(file) == 0)
+		return (1);
 	return (0);
 }

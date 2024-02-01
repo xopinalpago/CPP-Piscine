@@ -6,7 +6,7 @@
 /*   By: rmeriau <rmeriau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 14:54:48 by rmeriau           #+#    #+#             */
-/*   Updated: 2024/01/16 17:29:11 by rmeriau          ###   ########.fr       */
+/*   Updated: 2024/01/30 17:54:13 by rmeriau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <stack>
 #include <sstream>
 #include <cstdlib>
+#include <limits>
 
 class RPN
 {
