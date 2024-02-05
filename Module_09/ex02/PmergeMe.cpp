@@ -6,7 +6,7 @@
 /*   By: rmeriau <rmeriau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 15:07:14 by dlu               #+#    #+#             */
-/*   Updated: 2024/01/31 15:11:06 by rmeriau          ###   ########.fr       */
+/*   Updated: 2024/02/01 09:35:10 by rmeriau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -169,7 +169,6 @@ void PmergeMe::isSortedVector(std::vector<int> &pend)
         if (pend[i - 1] >= pend[i])
         {
             std::cout << "ERROR" << std::endl;
-            exit(1);
         }
     }
 }
@@ -181,7 +180,6 @@ void PmergeMe::isSortedDeque(std::deque<int> &pend)
         if (pend[i - 1] >= pend[i])
         {
             std::cout << "ERROR" << std::endl;
-            exit(1);
         }
     }
 }
@@ -231,6 +229,8 @@ int PmergeMe::binarySearchVector(std::vector<int> &sorted, int item, int low, in
 {
     while (low <= high) {
         int mid = low + (high - low) / 2;
+        if ((unsigned long)mid >= sorted.size())
+            return (-1);
         if (item == sorted[mid])
             return mid + 1;
         else if (item > sorted[mid])
@@ -245,8 +245,11 @@ int PmergeMe::binarySearchVector(std::vector<int> &sorted, int item, int low, in
 
 int PmergeMe::binarySearchDeque(std::deque<int> &sorted, int item, int low, int high)
 {
-    while (low <= high) {
+    while (low <= high)
+    {
         int mid = low + (high - low) / 2;
+        if ((unsigned long)mid >= sorted.size())
+            return (-1);
         if (item == sorted[mid])
             return mid + 1;
         else if (item > sorted[mid])
